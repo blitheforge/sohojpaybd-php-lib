@@ -16,22 +16,16 @@ To install the library, you can use Composer or manually include the library in 
 
 ```bash
 composer require sohojpay/sohojpay-lib
-
+```
 
 Manual Installation:
 Download the library and place it in your project directory. Include the library in your project:
 
-php
-Copy code
 require_once 'path/to/Sohojpay/SohojpayLib/SohojpayApi.php';
-Usage
+### Usage
 To use the library, create a class that extends the SohojpayApi abstract class and implement any additional methods you might need.
 
 Example:
-
-php
-Copy code
-<?php
 
 require_once 'path/to/Sohojpay/SohojpayLib/SohojpayApi.php';
 
@@ -46,10 +40,6 @@ $sohojpay = new MySohojpay();
 $sohojpay->setApi('YOUR_API_KEY');
 $sohojpay->setUrl('https://secure.sohojpaybd.com/api/');
 
-// Set headers if needed
-$sohojpay->setHeaders([
-    'Custom-Header: Value'
-]);
 
 // Set request parameters
 $sohojpay->setParams([
