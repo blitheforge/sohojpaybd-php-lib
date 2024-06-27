@@ -1,0 +1,19 @@
+{
+  "name": "sohojpay/sohojpay-lib",
+  "description": "Automate your Payment by SohojpayBD Payment Library",
+  "type": "library",
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "Sohojpay\\SohojpayLib\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "BlitheForge",
+      "email": "blitheforge@gmail.com"
+    }
+  ],
+  "minimum-stability": "stable",
+  "require": {}
+}
