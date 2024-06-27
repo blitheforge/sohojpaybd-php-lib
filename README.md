@@ -27,6 +27,7 @@ To use the library, create a class that extends the SohojpayApi abstract class a
 
 Example:
 
+<?php
 require_once 'path/to/Sohojpay/SohojpayLib/SohojpayApi.php';
 
 use Sohojpay\SohojpayLib\SohojpayApi;
