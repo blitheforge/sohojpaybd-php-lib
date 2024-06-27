@@ -40,7 +40,7 @@ class MySohojpay extends SohojpayApi
 
 $sohojpay = new MySohojpay();
 $sohojpay->setApi('YOUR_API_KEY');
-$sohojpay->setUrl('https://secure.sohojpaybd.com/api/');
+$sohojpay->setUrl('https://secure.sohojpaybd.com/api/payment/create');
 
 
 // Set request parameters
@@ -54,6 +54,7 @@ $sohojpay->setParams([
 ]);
 
 // Create a payment
+
 $response = $sohojpay->createPayment();
 echo $response;
 
@@ -61,6 +62,8 @@ echo $response;
 $sohojpay->setParams([
     'transaction_id' => 'GCAN7A410970'
 ]);
+
+$sohojpay->setUrl('https://secure.sohojpaybd.com/api/payment/verify');
 $response = $sohojpay->verifyPayment();
 echo $response;
 
