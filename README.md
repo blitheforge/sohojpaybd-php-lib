@@ -31,41 +31,37 @@ Example:
 
 ```php
 <?php
-require_once 'path/to/Sohojpay/SohojpayLib/SohojpayApi.php';
+require 'vendor/autoload.php';
 
-use Sohojpay\SohojpayLib\SohojpayApi;
+use Sohojpay\SohojpayLib\SohojpayLib;
 
-class MySohojpay extends SohojpayApi
-{
-    // You can implement additional methods if needed
-}
+$sohojpay = new SohojpayLib();
 
-$sohojpay = new MySohojpay();
 $sohojpay->setApi('YOUR_API_KEY');
-$sohojpay->setUrl('https://secure.sohojpaybd.com/api/payment/create');
 
 
 // Set request parameters
 $sohojpay->setParams([
-    'cus_name' => 'John Doe',
-    'cus_email' => 'johndoe@example.com',
-    'cus_phone' => '0123456789',
-    'metadata' => json_encode(['phone' => '0123456789']),
-    'success_url' => 'https://yourwebsite.com/success',
-    'cancel_url' => 'https://yourwebsite.com/cancel',
+  'cus_name' => 'John Doe',
+  'cus_email' => 'johndoe@example.com',
+  'cus_phone' => '0123456789',
+  'amount'    => 90,
+  'metadata' => ['phone' => '0123456789'],
+  'success_url' => 'https://yourwebsite.com/success',
+  'cancel_url' => 'https://yourwebsite.com/cancel',
 ]);
 
-// Create a payment
+//*** Create a payment
 
 $response = $sohojpay->createPayment();
 echo $response;
 
-// Verify a payment
+
+//*** Verify a payment
 $sohojpay->setParams([
     'transaction_id' => 'GCAN7A410970'
 ]);
 
-$sohojpay->setUrl('https://secure.sohojpaybd.com/api/payment/verify');
 $response = $sohojpay->verifyPayment();
 echo $response;
 
